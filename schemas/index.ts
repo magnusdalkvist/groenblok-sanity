@@ -1,2 +1,3 @@
-import pet from './pet'
-export const schemaTypes = [pet]
+import blogs from './blogs'
+
+export const schemaTypes = [blogs]
