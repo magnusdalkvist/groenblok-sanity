@@ -1,27 +1,61 @@
 import {DocumentIcon} from '@sanity/icons'
+import {defineField, defineType} from 'sanity'
 
-export default {
+export default defineType({
   name: 'blogs',
   type: 'document',
   title: 'Blogs',
   fields: [
-    {
+    defineField({
       name: 'title',
       type: 'string',
       title: 'Title',
-    },
-    {
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'slug',
       type: 'slug',
       title: 'Slug',
-
       options: {
         source: 'title',
         maxLength: 96,
       },
-    },
+      validation: (Rule) => Rule.required(),
+    }),
+    //author
+    defineField({
+      name: 'author',
+      type: 'reference',
+      title: 'Author',
+      to: [{type: 'authors'}],
+      validation: (Rule) => Rule.required(),
+    }),
+    //category
+    defineField({
+      name: 'category',
+      type: 'reference',
+      title: 'Category',
+      to: [{type: 'categories'}],
+      validation: (Rule) => Rule.required(),
+    }),
+    //tags
+    defineField({
+      name: 'tags',
+      type: 'array',
+      title: 'Tags',
+      of: [{type: 'string'}],
+      options: {
+        layout: 'tags',
+      },
+    }),
+    //add blog banner image
+    defineField({
+      name: 'bannerImage',
+      type: 'image',
+      title: 'Banner Image',
+    }),
     //add blog content
-    {
+    defineField({
       name: 'content',
       type: 'array',
       title: 'Content',
@@ -50,7 +84,8 @@ export default {
           },
         },
       ],
-    },
+      validation: (Rule) => Rule.required(),
+    }),
   ],
   preview: {
     select: {
@@ -66,4 +101,4 @@ export default {
       }
     },
   },
-}
+})
