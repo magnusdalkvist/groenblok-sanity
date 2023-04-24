@@ -2,9 +2,9 @@ import {DocumentIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'blogs',
+  name: 'blog',
   type: 'document',
-  title: 'Blogs',
+  title: 'Blog',
   fields: [
     defineField({
       name: 'title',
@@ -27,7 +27,7 @@ export default defineType({
       name: 'author',
       type: 'reference',
       title: 'Author',
-      to: [{type: 'authors'}],
+      to: [{type: 'author'}],
       validation: (Rule) => Rule.required(),
     }),
     //category
@@ -35,7 +35,7 @@ export default defineType({
       name: 'category',
       type: 'reference',
       title: 'Category',
-      to: [{type: 'categories'}],
+      to: [{type: 'category'}],
       validation: (Rule) => Rule.required(),
     }),
     //tags
@@ -96,7 +96,7 @@ export default defineType({
       const {title, subtitle} = selection
       return {
         title,
-        subtitle: '.../blogs/' + subtitle,
+        subtitle: '/blogs/' + subtitle,
         media: DocumentIcon,
       }
     },

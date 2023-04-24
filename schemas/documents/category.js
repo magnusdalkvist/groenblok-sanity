@@ -1,27 +1,27 @@
-import {UserIcon} from '@sanity/icons'
+import {FolderIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'settings',
+  name: 'category',
   type: 'document',
-  title: 'Settings',
+  title: 'Category',
   fields: [
     defineField({
-      name: 'name',
+      name: 'title',
       type: 'string',
-      title: 'name',
+      title: 'Title',
       validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
     select: {
-      title: 'name',
+      title: 'title',
     },
     prepare(selection) {
       const {title} = selection
       return {
         title,
-        media: UserIcon,
+        media: FolderIcon,
       }
     },
   },

@@ -1,9 +1,17 @@
-import {CogIcon, ComposeIcon, FilterIcon, UserIcon, UsersIcon} from '@sanity/icons'
+import {CogIcon, ComposeIcon, DocumentsIcon, FilterIcon, HomeIcon, UsersIcon} from '@sanity/icons'
 
 export const myStructure = (S) =>
   S.list()
     .title('Menu')
     .items([
+      S.listItem()
+        .title('Home')
+        .icon(HomeIcon)
+        .child(S.document().schemaType('home').title('Home')),
+      S.listItem()
+        .title('Pages')
+        .icon(DocumentsIcon)
+        .child(S.documentTypeList('page').title('Pages')),
       S.listItem()
         .title('Blogs')
         .icon(ComposeIcon)
@@ -14,17 +22,17 @@ export const myStructure = (S) =>
               S.listItem()
                 .title('All Blogs')
                 .icon(FilterIcon)
-                .child(S.documentTypeList('blogs').title('All Blogs')),
+                .child(S.documentTypeList('blog').title('All Blogs')),
               S.listItem()
                 .title('Blogs By Category')
                 .icon(FilterIcon)
                 .child(
-                  S.documentTypeList('categories')
+                  S.documentTypeList('category')
                     .title('Blogs by Category')
                     .child((categoryId) =>
                       S.documentList()
                         .title('Blogs')
-                        .filter('_type == "blogs" && category._ref == $categoryId')
+                        .filter('_type == "blog" && category._ref == $categoryId')
                         .params({categoryId})
                     )
                 ),
@@ -32,12 +40,12 @@ export const myStructure = (S) =>
                 .title('Blogs By Author')
                 .icon(FilterIcon)
                 .child(
-                  S.documentTypeList('authors')
+                  S.documentTypeList('author')
                     .title('Blogs by Author')
                     .child((authorId) =>
                       S.documentList()
                         .title('Blogs')
-                        .filter('_type == "blogs" && author._ref == $authorId')
+                        .filter('_type == "blog" && author._ref == $authorId')
                         .params({authorId})
                     )
                 ),
@@ -47,9 +55,10 @@ export const myStructure = (S) =>
       S.listItem()
         .title('Authors')
         .icon(UsersIcon)
-        .child(S.documentTypeList('authors').title('Authors')),
-      S.listItem().title('Categories').child(S.documentTypeList('categories').title('Categories')),
+        .child(S.documentTypeList('author').title('Authors')),
+      S.listItem().title('Categories').child(S.documentTypeList('category').title('Categories')),
       S.divider(),
+      S.listItem().title('Templates').child(S.documentTypeList('template').title('Templates')),
       S.listItem()
         .title('Settings')
         .icon(CogIcon)
