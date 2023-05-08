@@ -34,6 +34,7 @@ export default defineField({
         {type: 'module.latestArticles'},
         {type: 'module.imageGallery'},
         {type: 'module.shopSection'},
+        {type: 'module.numberedeInfoList'},
         {type: 'module.header'},
         {type: 'module.footer'},
       ],

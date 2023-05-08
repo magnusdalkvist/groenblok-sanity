@@ -4,6 +4,7 @@ import hero from './modules/hero'
 import slidingInfoCards from './modules/slidingInfoCards'
 import events from './modules/events'
 import latestArticles from './modules/latestArticles'
+import numberedInfoList from './modules/numberedInfoList'
 import imageGallery from './modules/imageGallery'
 import shopSection from './modules/shopSection'
 const modules = [
@@ -13,6 +14,7 @@ const modules = [
   slidingInfoCards,
   events,
   latestArticles,
+  numberedInfoList,
   imageGallery,
   shopSection,
 ]
