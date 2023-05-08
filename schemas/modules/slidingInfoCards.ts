@@ -49,11 +49,6 @@ export default defineField({
       ],
       validation: (Rule) => [Rule.required().error('You must add a speaker'), Rule.max(6)],
     }),
-    defineField({
-      name: 'backgroundImage',
-      title: 'Background Image',
-      type: 'image',
-    }),
   ],
   preview: {
     select: {

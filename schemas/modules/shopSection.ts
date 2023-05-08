@@ -44,11 +44,6 @@ export default defineField({
         }),
       ],
     }),
-    defineField({
-      name: 'backgroundImage',
-      title: 'Background Image',
-      type: 'image',
-    }),
   ],
   preview: {
     select: {
