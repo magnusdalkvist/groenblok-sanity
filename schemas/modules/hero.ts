@@ -22,11 +22,12 @@ export default defineField({
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'blocks.0.text',
     },
-    prepare() {
+    prepare({title}) {
       return {
-        title: 'Hero',
+        title,
+        subtitle: 'Hero',
         media: BulbOutlineIcon,
       }
     },

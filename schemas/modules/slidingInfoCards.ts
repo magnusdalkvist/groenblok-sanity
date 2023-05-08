@@ -2,8 +2,8 @@ import {BulbOutlineIcon} from '@sanity/icons'
 import {defineField} from 'sanity'
 
 export default defineField({
-  name: 'module.ourSpeakers',
-  title: 'Our Speakers',
+  name: 'module.slidingInfoCards',
+  title: 'Sliding Info Cards',
   type: 'object',
   icon: BulbOutlineIcon,
   fields: [
@@ -62,7 +62,7 @@ export default defineField({
     prepare({title}) {
       return {
         title,
-        subtitle: 'Our Speakers',
+        subtitle: 'Sliding Info Cards',
         media: BulbOutlineIcon,
       }
     },

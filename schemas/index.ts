@@ -1,10 +1,10 @@
 import header from './modules/header'
 import footer from './modules/footer'
 import hero from './modules/hero'
-import ourSpeakers from './modules/ourSpeakers'
+import slidingInfoCards from './modules/slidingInfoCards'
 import events from './modules/events'
 import latestArticles from './modules/latestArticles'
-const modules = [header, footer, hero, ourSpeakers, events, latestArticles]
+const modules = [header, footer, hero, slidingInfoCards, events, latestArticles]
 
 import articles from './documents/article'
 import authors from './documents/author'

@@ -29,7 +29,7 @@ export default defineField({
       type: 'array',
       of: [
         {type: 'module.hero'},
-        {type: 'module.ourSpeakers'},
+        {type: 'module.slidingInfoCards'},
         {type: 'module.events'},
         {type: 'module.latestArticles'},
         {type: 'module.header'},
