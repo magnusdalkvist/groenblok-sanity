@@ -1,4 +1,12 @@
-import {CogIcon, ComposeIcon, DocumentsIcon, FilterIcon, HomeIcon, UsersIcon} from '@sanity/icons'
+import {
+  CogIcon,
+  ComposeIcon,
+  DocumentsIcon,
+  FilterIcon,
+  HomeIcon,
+  TiersIcon,
+  UsersIcon,
+} from '@sanity/icons'
 
 export const myStructure = (S) =>
   S.list()
@@ -58,7 +66,10 @@ export const myStructure = (S) =>
         .child(S.documentTypeList('author').title('Authors')),
       S.listItem().title('Categories').child(S.documentTypeList('category').title('Categories')),
       S.divider(),
-      S.listItem().title('Templates').child(S.documentTypeList('template').title('Templates')),
+      S.listItem()
+        .title('Templates')
+        .icon(TiersIcon)
+        .child(S.documentTypeList('template').title('Templates')),
       S.listItem()
         .title('Settings')
         .icon(CogIcon)

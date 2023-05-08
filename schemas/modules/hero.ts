@@ -8,10 +8,16 @@ export default defineField({
   icon: BulbOutlineIcon,
   fields: [
     defineField({
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: 'blocks',
+      title: 'Blocks',
+      type: 'array',
+      of: [{type: 'block.title'}, {type: 'block.copy'}, {type: 'block.buttonGroup'}],
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'backgroundImage',
+      title: 'Background Image',
+      type: 'image',
     }),
   ],
   preview: {

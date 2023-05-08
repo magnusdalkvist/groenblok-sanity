@@ -7,6 +7,12 @@ export default defineType({
   title: 'Home',
   fields: [
     defineField({
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'template',
       title: 'Template',
       type: 'reference',
