@@ -27,7 +27,14 @@ export default defineField({
       name: 'modules',
       title: 'Modules',
       type: 'array',
-      of: [{type: 'module.hero'}, {type: 'module.header'}, {type: 'module.footer'}],
+      of: [
+        {type: 'module.hero'},
+        {type: 'module.ourSpeakers'},
+        {type: 'module.events'},
+        {type: 'module.latestArticles'},
+        {type: 'module.header'},
+        {type: 'module.footer'},
+      ],
     }),
   ],
   preview: {

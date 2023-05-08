@@ -2,9 +2,9 @@ import {DocumentIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'blog',
+  name: 'article',
   type: 'document',
-  title: 'Blog',
+  title: 'Article',
   fields: [
     defineField({
       name: 'title',
@@ -48,13 +48,13 @@ export default defineType({
         layout: 'tags',
       },
     }),
-    //add blog banner image
+    //add article banner image
     defineField({
       name: 'bannerImage',
       type: 'image',
       title: 'Banner Image',
     }),
-    //add blog content
+    //add article content
     defineField({
       name: 'content',
       type: 'array',
@@ -96,7 +96,7 @@ export default defineType({
       const {title, subtitle} = selection
       return {
         title,
-        subtitle: '/blogs/' + subtitle,
+        subtitle: '/articles/' + subtitle,
         media: DocumentIcon,
       }
     },

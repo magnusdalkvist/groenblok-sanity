@@ -21,39 +21,39 @@ export const myStructure = (S) =>
         .icon(DocumentsIcon)
         .child(S.documentTypeList('page').title('Pages')),
       S.listItem()
-        .title('Blogs')
+        .title('Articles')
         .icon(ComposeIcon)
         .child(
           S.list()
             .title('Filters')
             .items([
               S.listItem()
-                .title('All Blogs')
+                .title('All Articles')
                 .icon(FilterIcon)
-                .child(S.documentTypeList('blog').title('All Blogs')),
+                .child(S.documentTypeList('article').title('All Articles')),
               S.listItem()
-                .title('Blogs By Category')
+                .title('Articles By Category')
                 .icon(FilterIcon)
                 .child(
                   S.documentTypeList('category')
-                    .title('Blogs by Category')
+                    .title('Articles by Category')
                     .child((categoryId) =>
                       S.documentList()
-                        .title('Blogs')
-                        .filter('_type == "blog" && category._ref == $categoryId')
+                        .title('Articles')
+                        .filter('_type == "article" && category._ref == $categoryId')
                         .params({categoryId})
                     )
                 ),
               S.listItem()
-                .title('Blogs By Author')
+                .title('Articles By Author')
                 .icon(FilterIcon)
                 .child(
                   S.documentTypeList('author')
-                    .title('Blogs by Author')
+                    .title('Articles by Author')
                     .child((authorId) =>
                       S.documentList()
-                        .title('Blogs')
-                        .filter('_type == "blog" && author._ref == $authorId')
+                        .title('Articles')
+                        .filter('_type == "article" && author._ref == $authorId')
                         .params({authorId})
                     )
                 ),
