@@ -5,7 +5,19 @@ import slidingInfoCards from './modules/slidingInfoCards'
 import events from './modules/events'
 import latestArticles from './modules/latestArticles'
 import numberedInfoList from './modules/numberedInfoList'
-const modules = [header, footer, hero, slidingInfoCards, events, latestArticles, numberedInfoList]
+import imageGallery from './modules/imageGallery'
+import shopSection from './modules/shopSection'
+const modules = [
+  header,
+  footer,
+  hero,
+  slidingInfoCards,
+  events,
+  latestArticles,
+  numberedInfoList,
+  imageGallery,
+  shopSection,
+]
 
 import articles from './documents/article'
 import authors from './documents/author'
