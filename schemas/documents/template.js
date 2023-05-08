@@ -32,6 +32,7 @@ export default defineField({
         {type: 'module.slidingInfoCards'},
         {type: 'module.events'},
         {type: 'module.latestArticles'},
+        {type: 'module.numberedInfoList'},
         {type: 'module.header'},
         {type: 'module.footer'},
       ],

@@ -4,7 +4,8 @@ import hero from './modules/hero'
 import slidingInfoCards from './modules/slidingInfoCards'
 import events from './modules/events'
 import latestArticles from './modules/latestArticles'
-const modules = [header, footer, hero, slidingInfoCards, events, latestArticles]
+import numberedInfoList from './modules/numberedInfoList'
+const modules = [header, footer, hero, slidingInfoCards, events, latestArticles, numberedInfoList]
 
 import articles from './documents/article'
 import authors from './documents/author'

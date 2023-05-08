@@ -23,7 +23,7 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'pageTemplate',
+      name: 'template',
       type: 'reference',
       title: 'Page Template',
       to: [{type: 'template'}],
