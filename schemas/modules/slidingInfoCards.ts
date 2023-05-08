@@ -14,23 +14,23 @@ export default defineField({
       validation: (Rule) => Rule.required().error('You must add a title'),
     }),
     defineField({
-      name: 'speakers',
-      title: 'Speakers',
+      name: 'cards',
+      title: 'Cards',
       type: 'array',
       of: [
         defineField({
-          name: 'speaker',
-          title: 'Speaker',
+          name: 'card',
+          title: 'Card',
           type: 'object',
           fields: [
             defineField({
-              name: 'name',
-              title: 'Name',
+              name: 'title',
+              title: 'Title',
               type: 'string',
             }),
             defineField({
-              name: 'work',
-              title: 'Work',
+              name: 'subtitle',
+              title: 'Subtitle',
               type: 'string',
             }),
             defineField({
